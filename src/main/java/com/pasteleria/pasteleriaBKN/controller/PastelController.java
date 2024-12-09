@@ -43,21 +43,21 @@ public class PastelController
 	{
 		Pastel pastel=new Pastel();
 		model.addAttribute("pastel",pastel);
-		return "crearPastel";
+		return "SRC/Pasteles/crearPastel";
 	}
 	
 	@PostMapping("/pasteles")//Guarda el pastel y redirecciona al html donde estan listados los pasteles
 	public String savePastel(@ModelAttribute("pastel")Pastel pastel) 
 	{
 		pastelService.save(pastel);
-		return "redirect:/pasteles";
+		return "redirect:SRC/Pasteles/pasteles";
 	}
 	
 	@GetMapping("/pasteles/editar/{id}")//Lleva al html para editar un pastel
 	public String seeReloadPastel(@PathVariable Long id,Model model) 
 	{
 		model.addAttribute("pastel",pastelService.findById(id));
-		return "editarPastel";
+		return "SRC/Pasteles/editarPastel";
 	}
 	
 	@PostMapping("/pasteles/{id}")//Recibe todos los parametros cambiados

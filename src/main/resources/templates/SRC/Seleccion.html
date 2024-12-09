@@ -16,12 +16,21 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        <link rel="stylesheet" href="CSS/Seleccion.css">
+        <link rel="stylesheet" href="CSS/index.css">
     </head>
 
     <body>
         <header>
-            <!-- place navbar here -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="display-4">Pasteleria Kollao</h1>
+                    <a th:href="@{/}" class="btn btn-custom">Index</a>
+                    <h3 class="footer-text">"En todo hay un Kollao"</h3>
+                    <br>
+                </div>
+                
+            </div>
+            
         </header>
         <main>
             <div class="container" id="Cosas">
@@ -59,9 +68,7 @@
                 </div>
             </div>
         </main>
-        <footer>
-            <!-- place footer here -->
-        </footer>
+        
         <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
