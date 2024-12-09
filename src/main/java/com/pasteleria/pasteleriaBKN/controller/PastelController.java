@@ -24,13 +24,18 @@ public class PastelController
 	{
 		return "index";
 	}
+	@GetMapping("/seleccion")
+	public String seleccionAdmin() 
+	{
+		return"SRC/Seleccion";
+	}
 	
 	
 	@GetMapping("/pasteles")//Lleva al html donde estan listados los pasteles
 	public String findAllPasteles(Model model) 
 	{
 		model.addAttribute("pasteles",pastelService.findAll());
-		return "pasteles"; 
+		return "SRC/Pasteles/pasteles"; 
 	}
 	
 	@GetMapping("/pasteles/nuevo")//Lleva al html para crear un pastel

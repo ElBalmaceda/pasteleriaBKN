@@ -1,0 +1,47 @@
+body
+{
+    background-color: rgb(46, 46, 89);
+}
+
+
+
+.btn-custom {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    border-radius: 25px;
+    padding: 10px 30px;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 20px;
+}
+.goodies-title {
+    text-align: center;
+    margin: 50px 0 30px;
+    font-weight: bold;
+}
+
+.card {
+    border: none;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    border-radius: 8px;
+}
+
+.card-title {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.card-text {
+    color: #6c757d;
+}
