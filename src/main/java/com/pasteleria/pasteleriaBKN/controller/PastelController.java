@@ -88,8 +88,16 @@ public class PastelController
 	@GetMapping("/pasteles/eliminar/{id}")//Elimina el pastel por el id
 	public String deletePastelById(@PathVariable Long id) 
 	{
-		pastelService.deleteById(id);
-		return "redirect:/pasteles";
+		try 
+		{
+			pastelService.deleteById(id);
+			return "redirect:/pasteles?Eliminado=1";
+		}
+		catch(Exception e) 
+		{
+			return "redirect:/pasteles?Eliminado=0";
+		}
+		
 	}
 	
 	

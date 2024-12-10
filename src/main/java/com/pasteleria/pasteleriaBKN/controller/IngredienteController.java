@@ -21,7 +21,7 @@ public class IngredienteController
 	public String findAllIngredientes(Model model)
 	{
 		model.addAttribute("ingredientes",ingredienteService.findAll());
-		return "ingredientes";
+		return "SRC/Ingredientes/ingredientes";
 	}
 	@GetMapping("/buscar")
 	public String buscarIngredientes(@RequestParam("ids") List<Long> ids, Model model) 
@@ -35,7 +35,7 @@ public class IngredienteController
 	{
 		Ingrediente ingrediente = new Ingrediente();
 		model.addAttribute("ingrediente", ingrediente);
-		return "crearIngrediente";
+		return "SRC/Ingredientes/crearIngrediente";
 	}
 	@PostMapping("/ingredientes")
 	public String saveIngrediente(@ModelAttribute Ingrediente ingrediente) 
@@ -58,7 +58,15 @@ public class IngredienteController
 	@GetMapping("/ingredientes/eliminar/{id}")
 	public String deleteIngredienteById(@PathVariable Long id) 
 	{
-		ingredienteService.deleteById(id);
-		return "redirect:/ingredientes";
+		try 
+		{
+			ingredienteService.deleteById(id);
+			return "redirect:/ingredientes?Eliminado=1";
+		}
+		catch(Exception e) 
+		{
+			return "redirect:/ingredientes?Eliminado=0";
+		}
+		
 	}
 }
